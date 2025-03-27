@@ -20,4 +20,4 @@ runs:
     - name: run firmware-rubric-test
       shell: bash
       run: |
-        python3 check "${{inputs.c_file}} "${{inputs.rubric_file}}"
+        python3 ./check "${{inputs.c_file}} "${{inputs.rubric_file}}"
