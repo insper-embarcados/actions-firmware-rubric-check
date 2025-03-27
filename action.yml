@@ -17,7 +17,10 @@ runs:
       with:
         python-version: "3.10"
 
+    - name: Install PyYAML
+      shell: bash
+      run: pip install pyyaml
+
     - name: run firmware-rubric-test
       shell: bash
-      run: |
-        python3 ./check "${{inputs.c_file}} "${{inputs.rubric_file}}"
+      run: python3 "$GITHUB_ACTION_PATH/check.py" "${{ inputs.c_file }}" "${{ inputs.rubric_file }}"
