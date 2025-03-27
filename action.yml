@@ -1,0 +1,23 @@
+name: 'Verifica rubrica'
+desciption: 'Verifica estrutura do firmware'
+author: 'rafaelcorsi'
+
+inputs:
+  c_file:
+    description: 'C file path'
+    required: true
+  rubric_file:
+    description: 'Rubric yml path'
+    required: true
+
+runs:
+  using: "composite"
+  steps:
+    - uses: actions/setup-python@v4
+      with:
+        python-version: "3.10"
+
+    - name: run firmware-rubric-test
+      shell: bash
+      run: |
+        python3 check "${{inputs.c_file}} "${{inputs.rubric_file}}"

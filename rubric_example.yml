@@ -1,0 +1,17 @@
+forbiten:
+  - names:
+    - sleep_ms
+    - sleep_us
+    error_text: Você não deve utilizar nenhuma funcão de sleep
+
+shall_have:
+  - names:
+      - xQueueBtn
+      - xSemaphoreLedR
+      - xSemaphoreLedY
+      - xSemaphoreTake
+    error_text: O seu código deve necessariamente fazer uso de
+
+  - names:
+      - xQueueReceive
+    error_text: Não le a fila
